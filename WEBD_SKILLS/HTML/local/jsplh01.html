@@ -1,0 +1,26 @@
+    <!-- when a button is clicked then change the text of the paragraph -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+     <p>Hello, User what's up ??</p>
+     <button>Let's Explore</button>
+     <script>
+        document.querySelector("button").addEventListener("click",function(){
+            document.querySelector("p").textContent="Lets Begin !!";
+            document.querySelector("p").style.color="aqua";
+            
+
+
+        })
+     </script>
+    
+</body>
+</html>

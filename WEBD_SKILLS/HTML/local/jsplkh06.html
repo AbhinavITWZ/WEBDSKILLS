@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: antiquewhite;
+            padding: 20px;
+            width: 90%;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 2px 2px 3px ;
+        }
+        ul li{
+            list-style: none;
+            font-weight: bolder;
+            font-size: 1.3em;
+            
+        }
+        p{
+            display: none;
+        }
+        /* flex ki property humesha container me lagti h jo bhi h */
+    </style>
+</head>
+<body>
+    <ul>
+        <li id="home">Home</li>
+        <li id="about">About</li>
+        <li id="contact">Contact</li>
+    </ul>
+    <p class="home text"><b>Home Section :</b>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis, quisquam. Sint, ad consectetur similique quod, molestiae, impedit voluptate rem perferendis fugit blanditiis maxime? Quae sunt nostrum, excepturi vero, corporis, eum totam nisi nam dolore itaque aliquid sit fuga repellat unde numquam repudiandae animi! Fuga blanditiis debitis alias exercitationem illum delectus eos, earum nemo optio provident. Neque optio, labore distinctio molestiae quia aliquid soluta voluptas fuga ab nisi rem. Minus doloremque voluptate commodi blanditiis. Quisquam, doloremque velit? Est ad quam libero laboriosam hic nobis natus quisquam, fugiat, dolore vitae ipsa ducimus quibusdam quasi neque saepe, eos dolorum aliquid? Illum rem odio aspernatur, porro error sint ratione id! Eligendi dicta libero voluptatibus, magnam recusandae inventore quod necessitatibus non saepe repellendus, deleniti odio!</p>
+
+    <p class="about text"><b>About Section :</b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus optio unde, ullam nesciunt quibusdam delectus ab harum fugiat porro quidem sint qui nostrum vel, voluptatum culpa excepturi laborum, voluptas obcaecati eaque labore blanditiis quae magni doloremque et? Voluptatem consequuntur excepturi tempora ullam obcaecati aperiam dolorum omnis ea iusto. Eligendi, ad obcaecati ut laborum voluptates nostrum aliquid similique adipisci omnis fuga, laudantium fugiat praesentium nihil quae excepturi quaerat veniam deleniti sed autem suscipit hic? Perspiciatis laudantium maxime nobis quos harum cupiditate excepturi praesentium, natus recusandae odit minus eveniet earum dignissimos omnis vero quo deserunt commodi nihil alias tempore saepe. Iure, facilis culpa amet doloremque eos nobis quod voluptas officiis, ipsum excepturi veritatis sequi sunt reprehenderit consectetur omnis, autem sit maiores tempora obcaecati nesciunt! Neque nostrum amet esse nisi, voluptatum eius adipisci quos in non magnam harum veritatis reprehenderit ipsam exercitationem fugiat, quas, natus aliquid hic! Itaque atque commodi totam assumenda excepturi provident accusamus eligendi autem fugiat, nesciunt omnis consectetur aperiam repellat minima, neque quidem recusandae dolore? Eos dolorem, atque maxime cupiditate, eaque voluptatibus incidunt sequi saepe et id, minus blanditiis aspernatur laborum pariatur. Ab officiis, magni cupiditate accusantium unde praesentium illo aperiam totam et, possimus voluptatem optio doloremque repellat nostrum fuga.</p>
+
+
+    <p class="contact text"><b>CONTACTS SECTION :</b> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero vitae a dolore delectus, voluptatum obcaecati aspernatur dicta officia modi laudantium ut quam vel, cumque, maxime mollitia saepe et? Nemo cum ratione quis iure impedit aut facilis! Dolorem autem ipsa sunt deleniti saepe culpa, nemo ut eligendi molestias velit est consequatur, delectus excepturi fuga inventore, veritatis voluptas? Esse illum libero dolorem possimus, assumenda ducimus voluptate inventore sapiente qui unde atque? Voluptates quos laboriosam officia dolore dolorem, quam totam assumenda culpa pariatur, fugiat quasi earum est eligendi officiis aliquid iusto deleniti, fuga cupiditate sint tempore blanditiis! Distinctio, odio enim impedit dicta nobis totam vero cupiditate perferendis vitae fugiat nesciunt sunt dolore voluptates! Quia ipsa ipsam incidunt omnis nam fuga voluptatem dolores optio quisquam iusto? Voluptatum praesentium ad, optio libero debitis accusantium possimus, recusandae nisi, nemo laudantium porro nam nihil vero magni fuga voluptate necessitatibus? Voluptate, consectetur distinctio ipsum praesentium assumenda totam facere, voluptatem numquam nesciunt odit ut? Facilis cumque vitae, culpa ipsum eligendi eum, sapiente nobis qui odit, totam alias optio rerum.</p>
+
+
+    <script>
+        // js ki styling ki priority sabse jyada h
+       var list=document.querySelectorAll("li");
+
+        var texts=document.querySelectorAll(".text");
+
+
+        list.forEach(function(element,index){
+            element.addEventListener("click",function(){
+                clrtext();
+                texts[index].style.display="block";
+
+
+                
+            })
+
+        })
+
+
+        
+        function clrtext(){
+            document.querySelectorAll(".text").forEach(function(text){
+                text.style.display="none";
+
+            })
+        }
+
+
+
+
+
+
+    </script>
+</body>
+</html>

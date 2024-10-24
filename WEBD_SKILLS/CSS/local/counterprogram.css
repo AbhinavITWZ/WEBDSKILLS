@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    margin: 10px;
+    border: 5px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.container span{
+    font-size: 40px;
+    font-weight: bolder;
+}
+.container .btnContainer{
+    margin-bottom: 10px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+button{
+    padding: 8px;
+    border-radius: 10px;
+    color: rgb(223, 0, 0);
+    transition: all 0.3s linear;
+}
+button:hover{
+    background-color: aquamarine;
+    color: black;
+    transform: scale(1.1);
+
+}

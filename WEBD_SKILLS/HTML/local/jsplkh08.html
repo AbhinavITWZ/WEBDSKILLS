@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        input{
+            
+            width: 90%;
+            margin-left:  auto;
+            margin-right: auto;
+            margin-top: 20px;
+            font-weight: bolder;
+            border: 2px solid ;
+            outline-color: rgb(193, 103, 0);
+            margin-bottom: 20px;
+        }
+        .datacontainer{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .data{
+            
+            width: 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        img{
+            width: 100%;
+            border-radius: 50%;
+            object-fit: cover; 
+             
+        }
+        h4{
+            margin-top: 0px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" placeholder="search..">
+        <div class="datacontainer">
+           
+        </div>
+    </div>
+
+
+    <script>
+        var input=document.querySelector("input");
+        var datacontainer=document.querySelector(".datacontainer");
+        var data=[
+        {name:"Johnny",src:`https://media.istockphoto.com/id/685132245/photo/mature-businessman-smiling-over-white-background.jpg?s=612x612&w=0&k=20&c=OJk6U-oCZ31F3TGmarAAg2jVli8ZWTagAcF4P-kNIqA=`}, 
+        {name:"joe",src:`https://shotkit.com/wp-content/uploads/2020/10/portrait-photography-featured.jpg`},
+        {name:"john",src:`https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Self_portrait_of_Edward_Sheriff_Curtis.jpg/800px-Self_portrait_of_Edward_Sheriff_Curtis.jpg`},
+        {name:"BabaJII",src:`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaHjnV2G_6oM7RgZXd4HUFNd2c-wvkdGityA&s`}
+
+        
+        ]
+
+
+
+datacontainer.innerHTML="";
+        data.forEach(function(element){
+
+            datacontainer.innerHTML+=`
+        <div class="data">
+                <img src=${element.src} alt="img">
+                <h4>${element.name}</h4>
+        </div>`
+
+        })
+        
+        input.addEventListener("input",function(){
+            datacontainer.innerHTML="";
+
+           var fd= data.filter(function(e){
+                return e.name.toLowerCase().startsWith(input.value.toLowerCase());
+            })
+            fd.forEach(function(e){
+            
+                datacontainer.innerHTML+=`
+        <div class="data">
+                <img src=${e.src} alt="img">
+                <h4>${e.name}</h4>
+        </div>`
+
+
+            })
+        })
+
+
+       
+
+    </script>
+</body>
+</html>

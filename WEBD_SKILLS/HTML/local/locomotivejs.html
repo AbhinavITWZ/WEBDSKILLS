@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #page1{
+            width: 100%;
+            height: 100vh;
+            background-color: aquamarine;
+        }
+        #page2{
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(141, 177, 51);
+            overflow: hidden;
+        }
+        #page2 img{
+            width: 50%;
+            height: 100%;
+            object-fit: cover;
+        }
+        #page3{
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(15, 150, 105);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="page1"></div>
+        <div id="page2">
+            <img data-scroll data-scroll-speed="1" src="https://images.unsplash.com/photo-1718046254692-543196d7cba6?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+        </div>
+        <div id="page3"></div>
+    </main>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script>
+        const scroll = new LocomotiveScroll({
+    el: document.querySelector('main'),
+    smooth: true
+});
+    </script>
+</body>
+</html>

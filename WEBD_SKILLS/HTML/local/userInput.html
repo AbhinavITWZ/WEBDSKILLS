@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <p class="display"></p>   -->
+
+
+     <!-- for way 2 through input  -->
+     <div>
+      <label for="myText">Username : </label>
+      <input id="myText" type="text" placeholder="enter username" required> <br><br>
+      <button>Submit</button></div>
+    </form>
+
+
+
+
+    <script>
+       //let userName= window.prompt("whats your name ??");
+       //document.querySelector(".display").textContent=userName; 
+
+
+       //now,other way by text input
+       let userName;
+       document.querySelector('button').onclick=function(){
+       userName=document.querySelector('#myText').value;
+       document.querySelector('div').textContent=`Hello, ${userName}`;
+       }
+  
+
+
+
+    </script>
+</body>
+</html>

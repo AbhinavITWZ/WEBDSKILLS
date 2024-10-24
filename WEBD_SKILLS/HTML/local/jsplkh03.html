@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- In this we have to make a form validation using js if value is not wriiteen then error  -->
+     <form action="https://codifyindia.netlify.app" target="_blank">
+        <h4></h4>
+        <input type="text" placeholder="enter first name">
+        <input type="text"placeholder="enter last name">
+        <input id=sbmt type="submit">
+     </form>
+    <script>
+        var submit=document.querySelector("form");
+        var h4=document.querySelector("h4");
+
+        var inps=document.querySelectorAll('input[type="text"]');
+        submit.addEventListener("submit",function(ev) {
+            ev.preventDefault();
+            for(let i=0;i<inps.length;i++){
+                if(inps[i].value.trim()===""){
+                    h4.textContent="Error,some Fields Are Missing !!!";
+                    h4.style.color="orangered";
+                    break;
+
+                }
+                else{
+                    h4.textContent="";
+                    h4.style.color="white";
+
+                }
+            }
+            
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!-- add two images and a swap button and when swap is clicked it swaps the images -->
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 50%;
+            
+        }
+    </style>
+</head>
+<!-- . matlab se -->
+<body>
+    <img class="img1" src="/ASSETS/jpg.webp" alt="img">
+    <img class="img2" src="/ASSETS/pexels-pixabay-158063.jpg" alt="img">
+    <button>swap</button>
+    <script>
+        var img1=document.querySelector(".img1");
+        var img2=document.querySelector(".img2");
+        var btn=document.querySelector("button");
+        var src1=img1.src;
+        var src2=img2.src;
+        btn.addEventListener("click",function(){
+            if(img1.src===src1){
+                img1.src=src2;
+                img2.src=src1;
+            }
+            else{
+                img1.src=src1;
+                img2.src=src2;
+            }
+            
+
+// lekin ab samjh ke karne me jyada mja aata h
+
+        })
+      
+
+        
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #page1, #page2, #page3 {
+            width: 100%;
+            height: 100vh;
+        }
+        #page1 {
+            background-color: aquamarine;
+        }
+        #page2 {
+            background-color: rgb(100, 202, 164);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        #page3 {
+            background-color: rgb(0, 255, 170);
+        }
+        h4 {
+            text-align: center;
+            line-height: 30px;
+            font-weight: bolder;
+            color: rgb(87, 99, 110);
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="page1"></div>
+        <div id="page2">
+            <div class="container">
+                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, in </h4>
+                <h4>fuga. Corporis, fugit? Optio enim id cupiditate nisi voluptatem, quo </h4>
+                <h4>dolor. Voluptatem dolorem sit deleniti commodi, voluptatibus vel quas</h4>
+                <h4>perspiciatis reprehenderit ipsum facilis dolore ipsa? Eligendi, et quam </h4>
+                <h4>provident magnam quis, sunt doloribus, officiis ea incidunt illum ex! Iure nisi</h4>
+            </div>
+        </div>
+        <div id="page3"></div>
+    </main>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        var h4Elements = document.querySelectorAll("#page2 .container h4");
+    
+        h4Elements.forEach(function(elem) {
+            let spans = ""; // Initialize the spans variable for each h4 element
+    
+            // Split the text content of the h4 element into individual characters
+            var h4text = elem.innerHTML.split("");
+    
+            // Wrap each character in a span tag and concatenate to spans
+            h4text.forEach(function(char) {
+                spans += `<span>${char}</span>`;
+            });
+    
+            // Set the innerHTML of the h4 element to the newly created spans
+            elem.innerHTML = spans;
+    
+            // Animate each span inside the current h4 element
+            gsap.to("#page2 .container h4 span", {
+                color: "white",
+             
+                duration: 3,
+                stagger: 0.1, // Stagger the animation for each character
+                scrollTrigger: {
+                    trigger: "#page2 .container h4", // Trigger animation when the h4 element comes into view
+                    start: "top 70%",
+                    scroller:"body",
+                    
+                    // Adjust the start point as needed
+                    scrub: 2
+                }
+            });
+        });
+        
+    </script>
+    
+</body>
+</html>
